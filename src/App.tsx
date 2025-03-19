@@ -26,7 +26,14 @@ function App() {
           places_required: formData.placesRequired
         }]);
 
-      if (insertError) throw insertError;
+      if (insertError) {
+        // Check if the error is due to duplicate email
+        if (insertError.code === '23505' && insertError.message.includes('registrations_email_key')) {
+          setError('This email address has already been registered. Please use a different email address.');
+          return;
+        }
+        throw insertError;
+      }
 
       setSubmitted(true);
       setFormData({
@@ -58,7 +65,7 @@ function App() {
             <img 
               src="https://raw.githubusercontent.com/nk-khil/little-lodge-discovery/main/public/logo.png"
               alt="Little Lodge Nursery" 
-              className="h-32 w-auto" // Increased from h-24 to h-32
+              className="h-32 w-auto"
             />
           </div>
           <a 
@@ -91,7 +98,7 @@ function App() {
           <div className="relative aspect-video bg-gray-100 rounded-2xl overflow-hidden shadow-xl">
             <div style={{padding:'56.25% 0 0 0', position:'relative'}}>
               <iframe 
-                src="https://player.vimeo.com/video/1067116252?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1" 
+                src="https://player.vimeo.com/video/1067116252?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1" 
                 style={{position:'absolute', top:0, left:0, width:'100%', height:'100%'}}
                 frameBorder="0" 
                 allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
@@ -240,7 +247,9 @@ function App() {
                 </>
               )}
               {error && (
-                <p className="text-red-500 mt-2">{error}</p>
+                <div className="bg-white/10 text-white p-4 rounded-lg mt-4">
+                  {error}
+                </div>
               )}
             </form>
           </div>
