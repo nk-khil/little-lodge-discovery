@@ -1,0 +1,7 @@
+<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="250" cy="250" r="250" fill="#73c9bd"/>
+  <path d="M 250 40 A 210 210 0 1 1 40 250 A 210 210 0 1 1 250 40" fill="white"/>
+  <text x="250" y="150" text-anchor="middle" fill="#73c9bd" font-size="36" font-family="Arial">INSPIRE, BELIEVE, ACHIEVE</text>
+  <image href="data:image/svg+xml;base64,..." x="150" y="180" width="200" height="200"/>
+  <text x="250" y="420" text-anchor="middle" fill="#e5c83d" font-size="42" font-family="Arial" font-style="italic">Little Lodge Nursery</text>
+</svg>
