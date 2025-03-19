@@ -50,15 +50,15 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-brand-grey to-white">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <nav className="flex justify-between items-center mb-16">
           <div className="flex items-center">
             <img 
-              src="/logo.png" 
+              src="https://raw.githubusercontent.com/nk-khil/little-lodge-discovery/main/public/logo.png"
               alt="Little Lodge Nursery" 
-              className="h-24 w-auto"
+              className="h-32 w-auto" // Increased from h-24 to h-32
             />
           </div>
           <a 
@@ -104,7 +104,7 @@ function App() {
       </div>
 
       {/* What You'll Gain Section */}
-      <div className="bg-white py-16">
+      <div className="bg-gradient-to-b from-brand-grey to-white py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12 text-brand-black">What You'll Gain from the Day</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -138,7 +138,7 @@ function App() {
       </div>
 
       {/* Step-by-Step Guide Section */}
-      <div className="bg-brand-grey py-16">
+      <div className="bg-gradient-to-b from-white to-brand-grey py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12 text-brand-black">Your Step-by-Step Guide to Buying a Nursery</h2>
           <div className="grid md:grid-cols-2 gap-6">
